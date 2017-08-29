@@ -25,8 +25,6 @@
 
 首先安装[Node.js](http://nodejs.cn/)，选择需要的版本自行安装，这里不多赘述。
 
-本文源码在这：[webpack + vue项目搭建](http://download.csdn.net/download/headmaster_tan/9955455)，只要有安装Node.js，下载后运行`npm install`，后运行`npm run dev`即可。
-
 ## 初始化项目
 
 为了方便阅读，这里的项目目录结构使用的是上面的推荐目录。
@@ -168,7 +166,7 @@ module.exports = {
 }
 ```
 
-> 使用了`vue-loader`和`babel-loader`需要安装包：
+> 使用了`vue-loader`和`babel-loader`需要安装包：  
 ``` base
 npm install --save-dev vue-loader babel-loader babel-core babel-plugin-transform-runtime babel-preset-es2015 css-loader vue-style-loader vue-hot-reload-api vue-html-loader
 ```
@@ -187,7 +185,7 @@ module.exports = merge(baseConfig, {})
 
 上面代码仅仅是导出了跟`base.js`一模一样的配置，下面我们添加更多用于`dev`（开发环境）的配置。
 
-> webpack-merge 用于合并两个配置文件，需要安装
+> webpack-merge 用于合并两个配置文件，需要安装  
 ``` base
 npm install --save-dev webpack-merge
 ```
@@ -228,13 +226,12 @@ module.exports = merge(baseConfig, {
 })
 ```
 
-> 这里的HotModuleReplacementPlugin是webpack内置的插件，不需要安装
-
-> 但HtmlWebpackPlugin需要自行安装：
+> 这里的HotModuleReplacementPlugin是webpack内置的插件，不需要安装  
+> 但HtmlWebpackPlugin需要自行安装：  
 ```base
 npm install --save-dev html-webpack-plugin
-```
-> 在文件头中引入
+```  
+> 在文件头中引入  
 ``` javascript
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 ```
@@ -410,17 +407,15 @@ Hello Vue.js
 
 ## 配置Vuex
 
-> vuex通常用于存放和管理不同组件中的共用状态，例如不同路由页面之间的公共数据
-
-> vuex中的几个概念：
-
+> vuex通常用于存放和管理不同组件中的共用状态，例如不同路由页面之间的公共数据  
+> vuex中的几个概念：  
 > - state: 状态，即数据
 - store： 数据的集合，一个vuex引用，仅有一个store，包含n个state
 - getters：state不能直接取值，使用getters返回需要的state
 - mutations： state不能直接赋值，通过mutation定义最基本的操作
 - actions： 在action中调用一个或多个mutation
-- modules： store和state之间的一层，便于大型项目管理，store包含多个module，module包含state、mutation、action
-
+- modules： store和state之间的一层，便于大型项目管理，store包含多个module，module包含state、mutation、action  
+  
 > 本教程将以一个全局计数器作为例子
 
 1、安装`vuex`: `npm install --save vuex`
@@ -543,22 +538,16 @@ export default {
 
 这不是必须的，不想要可以跳过。
 
-> 虽然`eslint`不是必须的，但是强烈建议用在所有的JavaScript项目中。
-
-> 对于个人开发，可以在编程过程中发现并提示语法错误，有效过滤各种低级错误
-
-> 对于团队开发，强制采用一致的编码风格，保证项目的一致性，有效避免各种任性行为
-
-> 但是一定要注意，`eslint`定义的只是编码风格，规则是死的，人是活的，学会利用自定义规则的功能，增减规则
-
-> 同时要知道，`eslint`检测不通过不一定就是不能运行的，可能只是这种写法违背了编码风格，学会查看控制的查找具体错误原因
-
-> 想要更好的`eslint`体验，请根据不同编辑器安装对应的eslint插件，主流的编辑器已有相应的插件
+> 虽然`eslint`不是必须的，但是强烈建议用在所有的JavaScript项目中。  
+> 对于个人开发，可以在编程过程中发现并提示语法错误，有效过滤各种低级错误  
+> 对于团队开发，强制采用一致的编码风格，保证项目的一致性，有效避免各种任性行为  
+> 但是一定要注意，`eslint`定义的只是编码风格，规则是死的，人是活的，学会利用自定义规则的功能，增减规则  
+> 同时要知道，`eslint`检测不通过不一定就是不能运行的，可能只是这种写法违背了编码风格，学会查看控制的查找具体错误原因  
+> 想要更好的`eslint`体验，请根据不同编辑器安装对应的eslint插件，主流的编辑器已有相应的插件  
 
 1、选择合适的编码风格
 
-> `eslint`提供了很多[rules](https://eslint.org/docs/rules/)，可以直接在`.eslintrc`文件的`rules`中一个一个地配置
-
+> `eslint`提供了很多[rules](https://eslint.org/docs/rules/)，可以直接在`.eslintrc`文件的`rules`中一个一个地配置  
 > 显然我们大多数情况下不需要这么做，晚上已经有一些比较多人使用的风格了，本文推荐使用[standard](https://github.com/standard/standard)，点开这个链接，可以看到支持的编辑器和对应的插件名，自行去安装
 
 2、配置`.eslintrc`文件，在根目录下创建`.eslintrc`文件：
@@ -582,7 +571,7 @@ export default {
 
 `结合不同编辑器的插件`，打开js和vue文件中，就可以看到提示了
 
-> 根据使用的不同风格，安装所需的包，本文安装：
+> 根据使用的不同风格，安装所需的包，本文安装：  
 ``` base
 npm install --save-dev eslint babel-eslint eslint-config-standard eslint-plugin-standard eslint-plugin-html eslint-plugin-promise
 ```
@@ -611,7 +600,7 @@ module.exports = merge(baseConfig, {
 })
 ```
 
-> webpack常用插件
+> webpack常用插件  
 - extract-text-webpack-plugin 提取css到单独的文件
 - compression-webpack-plugin 压缩gzip
 - webpack.optimize.UglifyJsPlugin 压缩js文件，内置插件
