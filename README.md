@@ -410,11 +410,11 @@ Hello Vue.js
 > vuex通常用于存放和管理不同组件中的共用状态，例如不同路由页面之间的公共数据  
 > vuex中的几个概念：  
 > - state: 状态，即数据
-- store： 数据的集合，一个vuex引用，仅有一个store，包含n个state
-- getters：state不能直接取值，使用getters返回需要的state
-- mutations： state不能直接赋值，通过mutation定义最基本的操作
-- actions： 在action中调用一个或多个mutation
-- modules： store和state之间的一层，便于大型项目管理，store包含多个module，module包含state、mutation、action  
+> - store： 数据的集合，一个vuex引用，仅有一个store，包含n个state
+> - getters：state不能直接取值，使用getters返回需要的state
+> - mutations： state不能直接赋值，通过mutation定义最基本的操作
+> - actions： 在action中调用一个或多个mutation
+> - modules： store和state之间的一层，便于大型项目管理，store包含多个module，module包含state、mutation、action  
   
 > 本教程将以一个全局计数器作为例子
 
@@ -601,11 +601,11 @@ module.exports = merge(baseConfig, {
 ```
 
 > webpack常用插件  
-- extract-text-webpack-plugin 提取css到单独的文件
-- compression-webpack-plugin 压缩gzip
-- webpack.optimize.UglifyJsPlugin 压缩js文件，内置插件
-- webpack.DefinePlugin 定义全局变量，内置插件
-- webpack.optimize.CommonsChunkPlugin 提取公共依赖，内置插件
+> - extract-text-webpack-plugin 提取css到单独的文件
+> - compression-webpack-plugin 压缩gzip
+> - webpack.optimize.UglifyJsPlugin 压缩js文件，内置插件
+> - webpack.DefinePlugin 定义全局变量，内置插件
+> - webpack.optimize.CommonsChunkPlugin 提取公共依赖，内置插件
 
 > 根据项目需求添加相应的插件，插件配置参数请查看官方文档，这里不进行罗列
 
